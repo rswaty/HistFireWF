@@ -1,0 +1,67 @@
+---
+title: "historicalChoropleth"
+author: "rswaty"
+date: "2021-01-27"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r histChoropleth, echo=FALSE, message=FALSE, warning=FALSE}
+# libraries
+library(tidyverse)
+library(leaflet)
+library(dplyr)
+library(rgdal)
+library(geojsonio)
+library(RColorBrewer)
+library(scales)
+library(htmltools)
+
+spdf <- geojson_read("data/us_states_outlines48.json",  what = "sp")
+
+fireData <- read.csv("data/histAreaBurnedbyState.csv")
+
+fireData$historical_.annual_percent_burned <- round(fireData$historical_.annual_percent_burned, digits = 0)
+
+###### there should be a "connection" between the spatial data "spdf" and the datatable "data"
+# used merge to connect fire data to state data
+spdfFire <- merge(spdf, fireData, by.x = "NAME", by.y = "state")
+
+# set up red pallete
+mypalette <- colorNumeric( palette="Reds", domain = spdfFire@data$historical_.annual_percent_burned, na.color="transparent")
+
+# mess with labels
+mytext <- paste(
+    "State: ", spdfFire@data$NAME,"<br/>", 
+    "Acres burned: ", scales::number_format(big.mark = ",")(spdfFire@data$historic_acres_burned), "<br/>", 
+    "Percent burned: ", (spdfFire@data$historical_.annual_percent_burned), 
+    sep="") %>%
+  lapply(htmltools::HTML)
+
+
+mRS <- leaflet(spdfFire) %>% 
+  addTiles()  %>% 
+  setView( lat=38.89020900017848, lng=-97.85428689132351 , zoom=4) %>%
+  addPolygons(fillColor = ~mypalette(spdfFire@data$historical_.annual_percent_burned),
+              stroke=TRUE,
+              weight = 1,
+              color = "grey",
+              opacity = 5,
+              fillOpacity = .9,
+              label = mytext,
+              labelOptions = 
+                labelOptions( 
+                style = list("font-weight" = "normal", padding = "3px 8px"), 
+                textsize = "13px", 
+                direction = "auto")
+                
+              
+              
+    )
+
+mRS
+```
+
