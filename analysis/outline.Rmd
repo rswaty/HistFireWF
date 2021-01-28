@@ -21,27 +21,28 @@ The broader project will take many months.
 
 1.	There was a sh*tton of fire
     * Map of fire return interval (not interactive) (if time will convert this to “historic annual probability of fire”) *in QGIS*
-    * Celeste's choropleth.  *Draft complete but needs:*
+    * Celeste's choropleth.  *Draft complete at "analysis/historicalChoropleth.rmd" but needs:*
         * insertion into R-Markdown
         * explanation of colors and input data
         * note that this is all fires...surface, mixed and replacement
-    * Interactive horizontal bar, acres per state descending
-    * Hexbins *draft complete could use:*
+    * Interactive horizontal bar, acres per state descending *r-markdown "analysis/histHorizontal.rmd"*
+    * Hexbins *draft complete at analysis/historicalHexBin.rmd could use:*
         * made interactive
         * insertion into R-Markdown
         * explanation (same as Celeste's Choropleth)
 2.	Some ecosystems burned more than others
     * Group veg map inserted
-    * Simple bar chart of acres burned by broad veg type *draft complete but needs:*
+    * Simple bar chart of acres burned by broad veg type *draft complete at "analysis/histGroupVegBar.rmd" but needs:*
         * legend
         * color help
         * y-axis label
         * annotation to explain
-    * Chord (round) *complete* chart of fire types (surface, mixed, replacement) per grouped veg
-    * Sankey (left to right) chart of fire types (surface, mixed, replacement) per grouped veg
+    * Chord (round) *complete* chart of fire types (surface, mixed, replacement) per grouped veg. *draft complete at "analysis/histGroupVegChord.rmd" but needs:*
+        * explanation
+    * Sankey (left to right) chart of fire types (surface, mixed, replacement) per grouped veg **NOT STARTED, but could be done with "data/histFireGVchord**
     * Historical maps of where replacement, mixed and surface fires happened the most
 3.	Now
-    * Animated now chart 1984-2020 just acres…no months.  Eventually have different lines for severity
+    * Animated now chart 1984-2020 just acres…no months.  Eventually have different lines for severity.  **Not started, but data and link for code is at "analysis/animatedCurrent.rmd"
 4.	Then vs. now
     * Dumbbell chart
 5.	(eventually?) some depiction of how many acres are needed-will be more intensive modeling effort with stakeholder input

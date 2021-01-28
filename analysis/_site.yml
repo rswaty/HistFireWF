@@ -5,10 +5,23 @@ navbar:
   left:
   - text: Home
     href: index.html
+  - text: States Map
+    href: historicalChoropleth.html
+  - text: Hexbins
+    href: histHexBin.html
+  - text: Histo Histogram
+    href: histHorizontal.html
+  - text: Histo Veg and Fire
+    href: histGroupVegBar.html
+  - text: Histo Chord
+    href: histGroupVegChord.html
+  - text: Modern Fires
+    href: animatedCurrent.wflow_html
+  - text: Then and Now
+    href: thenNowDumbbell.html
   - text: About
     href: about.html
-  - text: License
-    href: license.html
+
   right:
   - icon: fa-github
     text: Source code
