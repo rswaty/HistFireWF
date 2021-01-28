@@ -10,13 +10,13 @@ navbar:
   - text: Hexbins
     href: histHexBin.html
   - text: Histo Histogram
-    href: histHorizontal.html
+    href: histHorizonal.html
   - text: Histo Veg and Fire
     href: histGroupVegBar.html
   - text: Histo Chord
     href: histGroupVegChord.html
   - text: Modern Fires
-    href: animatedCurrent.wflow_html
+    href: animatedCurrent.html
   - text: Then and Now
     href: thenNowDumbbell.html
   - text: About
