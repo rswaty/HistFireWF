@@ -1,0 +1,47 @@
+---
+title: "outline"
+author: "rswaty"
+date: "2021-01-27"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+LANDFIRE produces and delivers more than 2 dozen spatial datasets and 900+ ecological models.  Our hope is to empower conservationists who are working to restore/adapt/"resilionate" fire adapted ecosystems in the United States through development of maps, graphs and text.
+
+Celeste Basken is working on a scrolling document that will primarily be used within The Nature Conservancy.
+
+A much bigger national project is brewing that is just getting off the ground.  I am hoping that our outputs will inspire brainstorming at the least, and ideally become a part of the broader national conversation.
+
+The broader project will take many months.
+
+## Very drafty outline for February 1st meeting with Joint Fire Science staff
+
+1.	There was a sh*tton of fire
+    * Map of fire return interval (not interactive) (if time will convert this to “historic annual probability of fire”) *in QGIS*
+    * Celeste's choropleth.  *Draft complete but needs:*
+        * insertion into R-Markdown
+        * explanation of colors and input data
+        * note that this is all fires...surface, mixed and replacement
+    * Interactive horizontal bar, acres per state descending
+    * Hexbins *draft complete could use:*
+        * made interactive
+        * insertion into R-Markdown
+        * explanation (same as Celeste's Choropleth)
+2.	Some ecosystems burned more than others
+    * Group veg map inserted
+    * Simple bar chart of acres burned by broad veg type *draft complete but needs:*
+        * legend
+        * color help
+        * y-axis label
+        * annotation to explain
+    * Chord (round) *complete* chart of fire types (surface, mixed, replacement) per grouped veg
+    * Sankey (left to right) chart of fire types (surface, mixed, replacement) per grouped veg
+    * Historical maps of where replacement, mixed and surface fires happened the most
+3.	Now
+    * Animated now chart 1984-2020 just acres…no months.  Eventually have different lines for severity
+4.	Then vs. now
+    * Dumbbell chart
+5.	(eventually?) some depiction of how many acres are needed-will be more intensive modeling effort with stakeholder input
