@@ -1,0 +1,57 @@
+---
+title: "histGroupVegBar"
+author: "rswaty"
+date: "2021-01-28"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Historical Group Veg grouped bar
+
+Depicts fire type by group veg.
+
+Needs:
+
+* legend
+* color help
+* y-axis label
+* annotation to explain
+
+```{r histGVfireGroupedBar, echo=FALSE, message=FALSE, warning=FALSE}
+
+library(tidyverse)
+library(scales)
+library(extrafont)
+
+histFireGVGroupedBar <- read_csv("data/histFireGVGroupedBar.csv")
+#View(histFireGVGroupedBar)
+
+
+# sort by acres burned total
+histFireGVGroupedBar$groupveg <- factor(histFireGVGroupedBar$groupveg , levels = rev(unique(histFireGVGroupedBar$groupveg)))
+
+# now to get "ALL" on top
+histFireGVGroupedBar$fire <- factor(histFireGVGroupedBar$fire, levels = rev(unique(histFireGVGroupedBar$fire)))
+
+histGroupedBarChart <-
+ggplot(histFireGVGroupedBar, aes(fill=fire, y=acres, x=groupveg)) + 
+  geom_bar(position="dodge", stat="identity") +
+  coord_flip()+
+  labs(
+    title = "",
+    subtitle = "", 
+    x = "",
+    y = "") +
+  theme_bw(base_size = 14, base_family = "Calisto MT")+
+  theme(legend.position = "none") +
+  scale_fill_manual(values = (c("#cc4c02", # replacement
+                        "#fe9929", # mixed
+                        "#fed98e"))) +
+  theme(panel.border = element_blank()) +
+  scale_y_continuous(label = scales::comma) 
+
+histGroupedBarChart
+
+```
+

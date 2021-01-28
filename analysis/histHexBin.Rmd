@@ -1,0 +1,91 @@
+---
+title: "Hexbin map of historical fire percents by state"
+author: "rswaty"
+date: "2021-01-28"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Historical Hexbin Map
+
+Another way to depict amount of historical fire.  
+
+Needs:
+
+* made interactive if possible
+* insertion into R-Markdown
+* explanation (same as Celeste's Choropleth)
+
+<br>
+
+```{r historicalHexbinsProcessing, message=FALSE, warning=FALSE, include=FALSE}
+
+library(tidyverse)
+library(geojsonio)
+library(RColorBrewer)
+library(rgdal)
+library(broom)
+library(mapproj)
+
+
+
+
+spdf <- geojson_read("data/us_states_hexgrid48.geojson",  what = "sp")
+spdf@data = spdf@data %>%
+  mutate(google_name = gsub(" \\(United States\\)", "", google_name))
+plot(spdf)
+spdf@data = spdf@data %>% mutate(google_name = gsub(" \\(United States\\)", "", google_name))
+
+
+
+
+spdf_fortified <- tidy(spdf, region = "google_name")
+library(rgeos)
+centers <- cbind.data.frame(data.frame(gCentroid(spdf, byid=TRUE), id=spdf@data$iso3166_2))
+
+# puts the state names on the states
+ggplot() +
+  geom_polygon(data = spdf_fortified, aes( x = long, y = lat, group = group), fill="red", color="white") +
+  geom_text(data=centers, aes(x=x, y=y, label=id)) +
+  theme_void() +
+  coord_map()
+
+# read in states data
+histAreaBurnedbyState <- read_csv("data/histAreaBurnedbyState.csv")
+View(histAreaBurnedbyState)
+
+spdf_fortified <- spdf_fortified %>%
+  left_join(. , histAreaBurnedbyState, by=c("id"="state")) 
+
+
+
+
+```
+
+
+```{r historicalHexbinMap, echo=FALSE, message=FALSE, warning=FALSE}
+## make the actual colored map! ----
+
+percentHexbinMap <- 
+  ggplot() +
+  geom_polygon(data = spdf_fortified, 
+               aes(fill =  `historical_ annual_percent_burned`, x = long, y = lat, group = group), 
+               # added border to hexagons-feel free to change!
+               color = "black", size = 1.0) +
+  # added state abbreviations
+  geom_text(data=centers, aes(x=x, y=y, label=id)) +
+  scale_fill_gradient(
+    low = "#fff3f2",
+    high = "#b30000") + 
+  theme(axis.line=element_blank(),axis.text.x=element_blank(),
+        axis.text.y=element_blank(),axis.ticks=element_blank(),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),legend.position="none",
+        panel.background=element_blank(),panel.border=element_blank(),panel.grid.major=element_blank(),
+        panel.grid.minor=element_blank(),plot.background=element_blank()) +
+  coord_map()
+
+percentHexbinMap
+```
+

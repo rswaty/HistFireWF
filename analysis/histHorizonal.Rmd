@@ -1,0 +1,19 @@
+---
+title: "Horizontal Historical Fire by State"
+author: "rswaty"
+date: "2021-01-28"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Depict acres burned per state in a horizontal chart-NOT STARTED
+
+* descending by acres
+* lollipop 
+    * https://www.r-bloggers.com/2017/06/bar-plots-and-modern-alternatives/
+    * https://www.r-graph-gallery.com/lollipop-plot.html
+* use Plotly to make interactive
+* use percentage as dot labels
+
+DATA: "data/histAreaBurnedbyState.csv"

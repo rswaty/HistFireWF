@@ -1,5 +1,5 @@
 ---
-title: "historicalChoropleth"
+title: "Choropleth of historical fire by state"
 author: "rswaty"
 date: "2021-01-27"
 output: workflowr::wflow_html
@@ -7,7 +7,15 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Introduction
+## Historical choropleth
+
+Another way to depict amount of historical fire.  
+
+Needs:
+
+* change state file?  looks funky and Swaty thinks it complicates legend
+* redo to get legend or insert Title and explanation in r-markdown
+
 
 ```{r histChoropleth, echo=FALSE, message=FALSE, warning=FALSE}
 # libraries
