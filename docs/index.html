@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -343,7 +343,7 @@ $(document).ready(function () {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -352,7 +352,7 @@ $(document).ready(function () {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -361,10 +361,10 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-01-28
+<strong>Last updated:</strong> 2021-01-31
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>HistFireWF/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -380,28 +380,28 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtreeb3233a724c59ac15302f1fd08440f0b741deb6f4targetblankb3233a7a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/rswaty/HistFireWF/tree/b3233a724c59ac15302f1fd08440f0b741deb6f4" target="_blank">b3233a7</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtree5787a5efac156d2005b6221130af6045836643dbtargetblank5787a5ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/rswaty/HistFireWF/tree/5787a5efac156d2005b6221130af6045836643db" target="_blank">5787a5e</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtreeb3233a724c59ac15302f1fd08440f0b741deb6f4targetblankb3233a7a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtree5787a5efac156d2005b6221130af6045836643dbtargetblank5787a5ea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/rswaty/HistFireWF/tree/b3233a724c59ac15302f1fd08440f0b741deb6f4" target="_blank">b3233a7</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/rswaty/HistFireWF/tree/5787a5efac156d2005b6221130af6045836643db" target="_blank">5787a5e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -413,8 +413,28 @@ Ignored files:
     Ignored:    .Rproj.user/
     Ignored:    data/.DS_Store
 
+Untracked files:
+    Untracked:  analysis/guitar.jpeg
+    Untracked:  code/multiHistMap.R
+    Untracked:  data/histAllStatePercent.csv
+    Untracked:  data/histMixedStatePercent.csv
+    Untracked:  data/histReplacementStatePercent.csv
+    Untracked:  data/histSurfaceStatePercent.csv
+    Untracked:  data/tl_2017_us_state.cpg
+    Untracked:  data/tl_2017_us_state.dbf
+    Untracked:  data/tl_2017_us_state.prj
+    Untracked:  data/tl_2017_us_state.shp
+    Untracked:  data/tl_2017_us_state.shp.ea.iso.xml
+    Untracked:  data/tl_2017_us_state.shp.iso.xml
+    Untracked:  data/tl_2017_us_state.shp.xml
+    Untracked:  data/tl_2017_us_state.shx
+    Untracked:  data/tl_citation.txt
+    Untracked:  guitar.jpeg
+
 Unstaged changes:
     Modified:   analysis/_site.yml
+    Modified:   analysis/historicalChoropleth.Rmd
+    Modified:   analysis/index.Rmd
 
 </code></pre>
 <p>
@@ -453,6 +473,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/rswaty/HistFireWF/18bb783a8962502f896f5e523eb54c5bac46682e/docs/index.html" target="_blank">18bb783</a>
+</td>
+<td>
+rswaty
+</td>
+<td>
+2021-01-28
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -579,61 +616,19 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
+<div id="this-site" class="section level2">
+<h2>This “site”…</h2>
+<p>Is a rough collection of riffs that may or may not become parts of songs in a potential album. It is a “place” to work and share, <strong>but most definitely itself a communications tool</strong>.</p>
+<p>Some terms are hard to define clearly. For example, “Historical”. We do not model a specific year, but instead try to capture the disturbance dynamics just prior to major European colonization.</p>
+<p>These are not final products, and have not been fully annotated.</p>
+</div>
+<div id="blah-blah-blah" class="section level2">
+<h2>Blah blah blah</h2>
 <p>LANDFIRE produces and delivers more than 2 dozen spatial datasets and 900+ ecological models. Our hope is to empower conservationists who are working to restore/adapt/“resilionate” fire adapted ecosystems in the United States through development of maps, graphs and text.</p>
 <p>Celeste Basken is working on a scrolling document that will primarily be used within The Nature Conservancy.</p>
-<p>A much bigger national project is brewing that is just getting off the ground. I am hoping that our outputs will inspire brainstorming at the least, and ideally become a part of the broader national conversation.</p>
-<p>The broader project will take many months.</p>
+<p>The <a href="https://rswaty.github.io/TheCDL/">Conservation Data Lab</a> provided valuable code and initial review.</p>
 <p><strong>This “website” is more of a workbook. It contains code, data and charts. NOT a final product…used as collaborative coding tool and way to showcase interactivity.</strong></p>
-</div>
-<div id="very-drafty-outline-for-february-1st-meeting-with-joint-fire-science-staff" class="section level2">
-<h2>Very drafty outline for February 1st meeting with Joint Fire Science staff</h2>
-<ol style="list-style-type: decimal">
-<li>There was a freaking lot of fire prior to European colonization
-<ul>
-<li>Map of fire return interval (not interactive) (if time will convert this to “historic annual probability of fire”) <em>in QGIS</em></li>
-<li>Celeste’s choropleth. <em>Draft complete at “analysis/historicalChoropleth.rmd” but needs:</em>
-<ul>
-<li>insertion into R-Markdown</li>
-<li>explanation of colors and input data</li>
-<li>note that this is all fires…surface, mixed and replacement</li>
-</ul></li>
-<li>Interactive horizontal bar, acres per state descending <em>r-markdown “analysis/histHorizontal.rmd”</em></li>
-<li>Hexbins <em>draft complete at analysis/historicalHexBin.rmd could use:</em>
-<ul>
-<li>made interactive</li>
-<li>insertion into R-Markdown</li>
-<li>explanation (same as Celeste’s Choropleth)</li>
-</ul></li>
-</ul></li>
-<li>Some ecosystems burned more than others
-<ul>
-<li>Group veg map inserted</li>
-<li>Simple bar chart of acres burned by broad veg type <em>draft complete at “analysis/histGroupVegBar.rmd” but needs:</em>
-<ul>
-<li>legend</li>
-<li>color help</li>
-<li>y-axis label</li>
-<li>annotation to explain</li>
-</ul></li>
-<li>Chord (round) <em>complete</em> chart of fire types (surface, mixed, replacement) per grouped veg. <em>draft complete at “analysis/histGroupVegChord.rmd” but needs:</em>
-<ul>
-<li>explanation</li>
-</ul></li>
-<li>Sankey (left to right) chart of fire types (surface, mixed, replacement) per grouped veg <strong>NOT STARTED, but could be done with "data/histFireGVchord</strong></li>
-<li>Historical maps of where replacement, mixed and surface fires happened the most</li>
-</ul></li>
-<li>Now
-<ul>
-<li>Animated now chart 1984-2020 just acres…no months. Eventually have different lines for severity. **Not started, but data and link for code is at “analysis/animatedCurrent.rmd”</li>
-</ul></li>
-<li>Then vs. now
-<ul>
-<li>Dumbbell chart</li>
-</ul></li>
-<li>(eventually?) some depiction of how many acres are needed-will be more intensive modeling effort with stakeholder input</li>
-</ol>
+<p><strong>THIS does NOT address any type of conversion from “natural” (forest to forest) and agricultural</strong></p>
 </div>
 
 

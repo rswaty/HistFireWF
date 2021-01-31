@@ -1,75 +1,214 @@
 ---
-title: "Choropleth of historical fire by state"
-author: "rswaty"
+title: "Choropleths of historical fire by state"
+author: "Randy Swaty and Myles Walimaa"
 date: "2021-01-27"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
 ---
 
-## Historical choropleth
+## Historical choropleth #1.  You may be suprised, but remember the Devil's in the details
 
-Another way to depict amount of historical fire.  
+These "choropleth" maps depict the percent of each state that was burned annually by three fire types (surface, mixed and replacement), and all combined.  Note that we have not implemented a legend and that **ranges differ substantially** for each fire type as noted in the layer selection box.
 
-Needs:
-
-* change state file?  looks funky and Swaty thinks it complicates legend
-* redo to get legend or insert Title and explanation in r-markdown
+Pan, click states for popups and select different fire types.  
 
 
-```{r histChoropleth, echo=FALSE, message=FALSE, warning=FALSE}
-# libraries
-library(tidyverse)
-library(leaflet)
+```{r histChoropleth, message=FALSE, warning=FALSE, include=FALSE}
+
+library(tigris)
 library(dplyr)
+library(leaflet)
+library(tidyverse)
+library(sf)
 library(rgdal)
-library(geojsonio)
-library(RColorBrewer)
-library(scales)
-library(htmltools)
+library(htmlwidgets)
 
-spdf <- geojson_read("data/us_states_outlines48.json",  what = "sp")
+# Downloading the shapefiles for states at the lowest resolution
+states <- states(cb=T)
 
-fireData <- read.csv("data/histAreaBurnedbyState.csv")
 
-fireData$historical_.annual_percent_burned <- round(fireData$historical_.annual_percent_burned, digits = 0)
+states <- st_transform(states, CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 
-###### there should be a "connection" between the spatial data "spdf" and the datatable "data"
-# used merge to connect fire data to state data
-spdfFire <- merge(spdf, fireData, by.x = "NAME", by.y = "state")
+# get da csvs of historical fire percent for states
+all <- read_csv("data/histAllStatePercent.csv")
+mixed <- read_csv("data/histMixedStatePercent.csv")
+replacement <- read_csv("data/histReplacementStatePercent.csv")
+surface <- read_csv("data/histSurfaceStatePercent.csv")
 
-# set up red pallete
-mypalette <- colorNumeric( palette="Reds", domain = spdfFire@data$historical_.annual_percent_burned, na.color="transparent")
+all$percentAll <- round(all$percentAll, digits = 0)
+mixed$percentMixed <- round(mixed$percentMixed, digits = 0)
+replacement$percentReplacement <- round(replacement$percentReplacement, digits = 0)
+surface$percentSurface <- round(surface$percentSurface, digits = 0)
 
-# mess with labels
+
+
+
+states_fire1 <- geo_join(states, all, "NAME", "state", how = "inner")
+states_fire2 <- geo_join(states_fire1, mixed, "NAME", "state")
+states_fire3 <- geo_join(states_fire2, surface, "NAME", "state")
+states_fireAll4 <- geo_join(states_fire3, replacement, "NAME", "state")
+
+
+palAll <- colorNumeric("Reds", domain=states_fireAll4$percentAll)
+palMixed <- colorNumeric("Reds", domain=states_fireAll4$percentMixed)
+palReplacement <- colorNumeric("Reds", domain=states_fireAll4$percentReplacement)
+palSurface <- colorNumeric("Reds", domain=states_fireAll4$percentSurface)
+
 mytext <- paste(
-    "State: ", spdfFire@data$NAME,"<br/>", 
-    "Acres burned: ", scales::number_format(big.mark = ",")(spdfFire@data$historic_acres_burned), "<br/>", 
-    "Percent burned: ", (spdfFire@data$historical_.annual_percent_burned), 
+    "State: ", states_fireAll4$NAME,"<br/>", 
+    "Percent for all fires: ", (states_fireAll4$percentAll), "<br/>", 
+    "Percent for mixed fires: ", (states_fireAll4$percentMixed), "<br/>", 
+    "Percent for replacement fires: ", (states_fireAll4$percentReplacement), "<br/>", 
+    "Percent for surface fires: ", (states_fireAll4$percentSurface), "<br/>", 
     sep="") %>%
   lapply(htmltools::HTML)
 
 
-mRS <- leaflet(spdfFire) %>% 
-  addTiles()  %>% 
-  setView( lat=38.89020900017848, lng=-97.85428689132351 , zoom=4) %>%
-  addPolygons(fillColor = ~mypalette(spdfFire@data$historical_.annual_percent_burned),
+#################
+tryAll <- leaflet(states_fireAll4, options = leafletOptions(zoomSnap = 0.25)) %>% 
+  # addTiles()  %>%
+  setView( lat=35.2389948, lng=-96.3130186 , zoom=3.5) %>%
+  addPolygons(fillColor = ~palAll(states_fireAll4$percentAll),
               stroke=TRUE,
               weight = 1,
               color = "grey",
               opacity = 5,
               fillOpacity = .9,
+              group = "All fire types  combined (ranges from 0-25%)",
               label = mytext,
               labelOptions = 
                 labelOptions( 
                 style = list("font-weight" = "normal", padding = "3px 8px"), 
                 textsize = "13px", 
-                direction = "auto")
-                
-              
-              
-    )
+                direction = "auto"))%>%
+addPolygons(fillColor = ~palMixed(states_fireAll4$percentMixed),
+            stroke=TRUE,
+            weight = 1,
+            color = "grey",
+            opacity = 5,
+            fillOpacity = .9,
+            group = "Mixed fire type (ranges from 0-3%)")%>%
+addPolygons(fillColor = ~palReplacement(states_fireAll4$percentReplacement),
+            stroke=TRUE,
+            weight = 1,
+            color = "grey",
+            opacity = 5,
+            fillOpacity = .9,
+            group = "Replacement fire type (ranges from 0-15%)")%>%
+addPolygons(fillColor = ~palSurface(states_fireAll4$percentSurface),
+            stroke=TRUE,
+            weight = 1,
+            color = "grey",
+            opacity = 5,
+            fillOpacity = .9,
+            group = "Surface fire type (ranges from 0-18%)") %>%
 
-mRS
+#
+#   addLegend("bottomright", pal = palAll, values = ~states_fireAll4$percentAll,
+#             title = "All fire types",
+#             opacity = 1,
+#             group = "All") %>%
+#   addLegend("bottomright", pal = palMixed, values = ~states_fireAll4$percentMixed,
+#             title = "Mixed Fires (25-75% top death)",
+#             opacity = 1,
+#             group = "Mixed") %>%
+#   addLegend("bottomright", pal = palReplacement, values = ~states_fireAll4$percentReplacement,
+#             title = "Replacement Fires (> 75% top death)",
+#             opacity = 1,
+#             group = "Replacement") %>%
+#   addLegend("bottomright", pal = palSurface, values = ~states_fireAll4$percentSurface,
+#             title = "Surface Fires (< 25% top death)",
+#             opacity = 1,
+#             group = "Surface") %>%
+
+
+
+  addLayersControl(baseGroups = c("All Fire Types (ranges from 0-25%)", "Mixed fire type (ranges from 0-3%)", "Replacement fire type (ranges from 0-15%)", "Surface fire type (ranges from 0-18%)"),
+                   options = layersControlOptions(collapsed = FALSE),
+                   position = "bottomleft")%>%
+  htmlwidgets::onRender("
+        function() {
+            $('.leaflet-control-layers-overlays').prepend('<label style=\"text-align:center\">Please select fire type, noting ranges which are specific for each one</label>');
+        }
+    ")
+
+
+
+
+
+```
+
+
+```{r actualMap, echo=FALSE, message=FALSE, warning=FALSE}
+tryAll %>% hideGroup(states_fireAll4$percentSurface)
+```
+
+
+## Historical choropleth #2, kindly and quickly coded by Myles Walimaa
+
+Similar in concept to the map above this map depicts percent of each state that was burned annually prior to major European colonization and is a quick draft.  Could be highly customized, and maps of all fire types developed.  Cleaner approach than having selectable layers due to ability to have matching legends on each map.  Nice projection too.  
+
+```{r myles, message=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
+library(sf)
+library(tmap)
+library(raster)
+#################################
+
+# define coordinates per landfire website
+LFcoords <- "+proj=aea +lat_0=23 +lon_0=-96 +lat_1=29.5 +lat_2=45.5 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs"
+ # observe that is is a "character string" object
+# mission: transform all shapefiles to LFcoords crs
+
+# load data
+# if it's located in your project directory, use "./"
+# read.csv() for csv
+histFire <- read.csv("data/histAreaBurnedbyState.csv")
+
+# observe that it is a data.frame with 4 columns (1 character, 3 numeric objects)
+
+# st_read() for shapefiles
+usState <- st_read("data/tl_2017_us_state.shp") %>%
+  st_transform(crs = LFcoords) # mission: check
+
+
+
+
+# join data.frames by state and NAME, must rename one of them to match
+# I'm using pipes
+
+fireState <- usState %>%
+  rename(state = NAME) %>% # rename for common column between shapefile and csv
+  left_join(histFire) %>% # join csv to shapefile by common attribute "state"
+  mutate(histPercent = round(historical_.annual_percent_burned))
+  # calculate new column, round to whole number
+
+# remove NA using dplyr because dplyr works great with data.frames
+fireState <- drop_na(fireState)
+
+
+```
+
+```{r mylesMap, echo=FALSE, message=FALSE, warning=FALSE}
+# plot map
+# with great lakes of course
+tm_shape(fireState) +
+  tm_polygons("histPercent", title = "Historical %", palette = "Oranges",
+              lwd = 2,
+              legend.hist = F, 
+              legend.is.portrait = F,
+              # legend.hist.z = 1, 
+              # legend.z = 2,
+              breaks = c(0, 5, 10, 15, 20, 25, 30, 35)) +
+  tm_layout(legend.title.size = 0.95,
+            legend.hist.height = 0.25,
+            legend.hist.width = 0.24,
+            legend.bg.color = "gray44",
+            legend.bg.alpha = 0.4,
+            legend.frame = T,
+            title = "Historical % area burned by state - for context",
+            title.size = 1,
+            title.position = c("center", "top"))
 ```
 
