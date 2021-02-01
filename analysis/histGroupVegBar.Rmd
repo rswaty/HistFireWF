@@ -1,6 +1,6 @@
 ---
 title: "histGroupVegBar"
-author: "rswaty"
+author: "Randy Swaty"
 date: "2021-01-28"
 output: workflowr::wflow_html
 editor_options:
@@ -11,14 +11,8 @@ editor_options:
 
 Depicts fire type by group veg.
 
-Needs:
 
-* legend
-* color help
-* y-axis label
-* annotation to explain
-
-```{r histGVfireGroupedBar, echo=FALSE, message=FALSE, warning=FALSE}
+```{r histGVfireGroupedBar, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
 
 library(tidyverse)
 library(scales)
@@ -39,12 +33,13 @@ ggplot(histFireGVGroupedBar, aes(fill=fire, y=acres, x=groupveg)) +
   geom_bar(position="dodge", stat="identity") +
   coord_flip()+
   labs(
-    title = "",
-    subtitle = "", 
+    title = "Acres of historical fire",
+    subtitle = "Fire type by vegetation group", 
     x = "",
-    y = "") +
-  theme_bw(base_size = 14, base_family = "Calisto MT")+
-  theme(legend.position = "none") +
+    y = "Acres",
+    fill = "Fire Type") +
+  theme_bw(base_size = 16)+
+  theme(legend.position = "bottom") +
   scale_fill_manual(values = (c("#cc4c02", # replacement
                         "#fe9929", # mixed
                         "#fed98e"))) +

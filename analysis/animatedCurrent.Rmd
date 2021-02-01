@@ -1,6 +1,6 @@
 ---
 title: "Animated Current Fire Acres"
-author: "rswaty"
+author: "Brandon Caltrider and Randy Swaty (minor)"
 date: "2021-01-28"
 output: workflowr::wflow_html
 editor_options:
@@ -11,13 +11,7 @@ editor_options:
 
 Requisite modern fire chart, made a little  more interesting by animating.  Eventually we'll separate fires by severity, adding multiple lines.
 
-Make animated line chart using "data/modernFireAcres"
 
-Links for code:
 
-* https://www.r-graph-gallery.com/287-smooth-animation-with-tweenr.html
-
-```{r animatedCurrent, echo=FALSE, message=FALSE, warning=FALSE}
-
-```
+![](goo.gif)
 

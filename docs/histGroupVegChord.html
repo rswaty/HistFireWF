@@ -17,7 +17,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -429,7 +429,7 @@ div.tocify {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -438,7 +438,7 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -447,10 +447,10 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-01-28
+<strong>Last updated:</strong> 2021-02-01
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>HistFireWF/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -466,12 +466,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
@@ -538,16 +538,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtreeb3233a724c59ac15302f1fd08440f0b741deb6f4targetblankb3233a7a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/rswaty/HistFireWF/tree/b3233a724c59ac15302f1fd08440f0b741deb6f4" target="_blank">b3233a7</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtree1b7cf3912baebaae3f033102b7aeed04e5853a2atargetblank1b7cf39a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/rswaty/HistFireWF/tree/1b7cf3912baebaae3f033102b7aeed04e5853a2a" target="_blank">1b7cf39</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtreeb3233a724c59ac15302f1fd08440f0b741deb6f4targetblankb3233a7a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtree1b7cf3912baebaae3f033102b7aeed04e5853a2atargetblank1b7cf39a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/rswaty/HistFireWF/tree/b3233a724c59ac15302f1fd08440f0b741deb6f4" target="_blank">b3233a7</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/rswaty/HistFireWF/tree/1b7cf3912baebaae3f033102b7aeed04e5853a2a" target="_blank">1b7cf39</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -559,8 +559,20 @@ Ignored files:
     Ignored:    .Rproj.user/
     Ignored:    data/.DS_Store
 
+Untracked files:
+    Untracked:  analysis/goo.gif
+    Untracked:  code/animatedCurrent.R
+    Untracked:  figure/
+    Untracked:  goo.gif
+
 Unstaged changes:
-    Modified:   analysis/_site.yml
+    Modified:   analysis/animatedCurrent.Rmd
+    Modified:   analysis/histGroupVegBar.Rmd
+    Modified:   analysis/histGroupVegChord.Rmd
+    Modified:   analysis/histHexBin.Rmd
+    Modified:   analysis/histHorizonal.Rmd
+    Modified:   analysis/historicalChoropleth.Rmd
+    Modified:   data/modernFiresAcres.csv
 
 </code></pre>
 <p>
@@ -599,6 +611,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/rswaty/HistFireWF/18bb783a8962502f896f5e523eb54c5bac46682e/docs/histGroupVegChord.html" target="_blank">18bb783</a>
+</td>
+<td>
+rswaty
+</td>
+<td>
+2021-01-28
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -657,16 +686,11 @@ Publish the initial files for myproject
 </div>
 </div>
 </div>
-<div id="historical-group-veg-and-fire-chord-chart" class="section level2">
-<h2>Historical Group Veg and Fire Chord chart</h2>
-<p>Allows exploration of fire type and group veg.</p>
-<p>Needs:</p>
-<ul>
-<li>explanation</li>
-<li>sizing of chart and fonts improved</li>
-</ul>
-<div id="htmlwidget-042c7851ee63cd560508" style="width:672px;height:1152px;" class="chorddiag html-widget"></div>
-<script type="application/json" data-for="htmlwidget-042c7851ee63cd560508">{"x":{"matrix":[[0,0,0,0,0,0,0,4086387,3781499,70802040],[0,0,0,0,0,0,0,26187948,4127540,7315001],[0,0,0,0,0,0,0,19229845,1997629,1526717],[0,0,0,0,0,0,0,10216260,705342,3252754],[0,0,0,0,0,0,0,12283850,617173,632488],[0,0,0,0,0,0,0,133149,191529,4159210],[0,0,0,0,0,0,0,189158,30438,40313],[4086387,26187948,19229845,10216260,12283850,133149,189158,0,0,0],[3781499,4127540,1997629,705342,617173,191529,30438,0,0,0],[70802040,7315001,1526717,3252754,632488,4159210,40313,0,0,0]],"options":{"type":"bipartite","width":null,"height":null,"margin":30,"showGroupnames":true,"groupNames":["Grassland","Hardwood","Conifer","Riparian","Hardwood-Conifer","Shrubland","Savanna","Surface","Mixed","Replacement"],"groupColors":["#e6e0be","#56bf5f","#1d4220","#7db7c7","#397d3f","#917e5c","#5e513a","#fed98e","#fe9929","#cc4c02"],"groupThickness":0.1,"groupPadding":0.0523598775598299,"groupnamePadding":[10,10,10,10,10,10,10,10,10,10],"groupnameFontsize":10,"groupedgeColor":null,"chordedgeColor":"#B3B6B7","categoryNames":null,"categorynamePadding":100,"categorynameFontsize":28,"showTicks":false,"tickInterval":1000000,"ticklabelFontsize":10,"fadeLevel":0.1,"showTooltips":true,"showZeroTooltips":true,"tooltipNames":["Grassland","Hardwood","Conifer","Riparian","Hardwood-Conifer","Shrubland","Savanna","Surface","Mixed","Replacement"],"tooltipFontsize":12,"tooltipUnit":"","tooltipGroupConnector":"    &#x25B6;    ","precision":"null","clickAction":null,"clickGroupAction":null}},"evals":[],"jsHooks":[]}</script>
+<div id="grasslands-dominated-by-replacement-fires-forests-dominated-by-surface-fires-historically" class="section level2">
+<h2>Grasslands dominated by replacement fires, forests dominated by surface fires historically</h2>
+<p>Move your cursor around the diagram to explore. Band size corresponds to proportions.</p>
+<div id="htmlwidget-042c7851ee63cd560508" style="width:672px;height:768px;" class="chorddiag html-widget"></div>
+<script type="application/json" data-for="htmlwidget-042c7851ee63cd560508">{"x":{"matrix":[[0,0,0,0,0,0,0,4086387,3781499,70802040],[0,0,0,0,0,0,0,26187948,4127540,7315001],[0,0,0,0,0,0,0,19229845,1997629,1526717],[0,0,0,0,0,0,0,10216260,705342,3252754],[0,0,0,0,0,0,0,12283850,617173,632488],[0,0,0,0,0,0,0,133149,191529,4159210],[0,0,0,0,0,0,0,189158,30438,40313],[4086387,26187948,19229845,10216260,12283850,133149,189158,0,0,0],[3781499,4127540,1997629,705342,617173,191529,30438,0,0,0],[70802040,7315001,1526717,3252754,632488,4159210,40313,0,0,0]],"options":{"type":"bipartite","width":null,"height":null,"margin":80,"showGroupnames":true,"groupNames":["Grassland","Hardwood","Conifer","Riparian","Hardwood-Conifer","Shrubland","Savanna","Surface","Mixed","Replacement"],"groupColors":["#e6e0be","#56bf5f","#1d4220","#7db7c7","#397d3f","#917e5c","#5e513a","#fed98e","#fe9929","#cc4c02"],"groupThickness":0.1,"groupPadding":0.0523598775598299,"groupnamePadding":[10,10,10,10,10,10,10,10,10,10],"groupnameFontsize":11,"groupedgeColor":null,"chordedgeColor":"#B3B6B7","categoryNames":null,"categorynamePadding":100,"categorynameFontsize":28,"showTicks":false,"tickInterval":1000000,"ticklabelFontsize":10,"fadeLevel":0.1,"showTooltips":true,"showZeroTooltips":true,"tooltipNames":["Grassland","Hardwood","Conifer","Riparian","Hardwood-Conifer","Shrubland","Savanna","Surface","Mixed","Replacement"],"tooltipFontsize":12,"tooltipUnit":"","tooltipGroupConnector":"    &#x25B6;    ","precision":"null","clickAction":null,"clickGroupAction":null}},"evals":[],"jsHooks":[]}</script>
 <p><br> <br></p>
 <br>
 <p>

@@ -1,6 +1,6 @@
 ---
 title: "Choropleths of historical fire by state"
-author: "Randy Swaty and Myles Walimaa"
+author: "Randy Swaty, Celeste Basken and Myles Walimaa"
 date: "2021-01-27"
 output: workflowr::wflow_html
 editor_options:

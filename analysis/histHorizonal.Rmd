@@ -1,19 +1,41 @@
 ---
 title: "Horizontal Historical Fire by State"
-author: "rswaty"
+author: "Sarah Trujillo, Stacy Cotey and Randy Swaty (minor)"
 date: "2021-01-28"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
 ---
 
-## Depict acres burned per state in a horizontal chart-NOT STARTED
+## Historical "Lollipop" chart
+Chart depicting percent of state that burned annually (all fire types) just prior to major European colonization.
 
-* descending by acres
-* lollipop 
-    * https://www.r-bloggers.com/2017/06/bar-plots-and-modern-alternatives/
-    * https://www.r-graph-gallery.com/lollipop-plot.html
-* use Plotly to make interactive
-* use percentage as dot labels
+```{r fireLP, echo=FALSE, message=FALSE, warning=FALSE, fig.height=9}
+library(tidyverse)
+library(plotly)
 
-DATA: "data/histAreaBurnedbyState.csv"
+fire<- read.csv("data/histAreaBurnedbyState.csv")
+
+fire$historical_.annual_percent_burned <- round(fire$historical_.annual_percent_burned, digits = 0)
+
+fireLP <-
+ggplot( fire, aes(x=fct_reorder(state, historical_.annual_percent_burned), y=historical_.annual_percent_burned))+
+  geom_segment( aes(xend=state, yend=0)) +
+  geom_point( size=4, color="orange") +
+  geom_text(aes (label = signif(`historical_.annual_percent_burned`, digits = 3)),nudge_y= 1)+
+  coord_flip() +
+  xlab("") +
+  theme_bw()+
+  theme(text=element_text(size=14)) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  ylab("Historical Annual % Burned") 
+
+fireLP
+
+```
+
+```{r}
+fireLP + 
+  scale_color_gradient(low = 'greenyellow', high = 'forestgreen')
+```
+

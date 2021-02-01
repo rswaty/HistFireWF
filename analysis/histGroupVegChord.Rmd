@@ -7,16 +7,11 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Historical Group Veg and Fire Chord chart
+## Grasslands dominated by replacement fires, forests dominated by surface fires historically
+Move your cursor around the diagram to explore.  Band size corresponds to proportions.
+ 
 
-Allows exploration of fire type and group veg.
-
-Needs:
-
-* explanation
-* sizing of chart and fonts improved
-
-```{r histChord, echo=FALSE, message=FALSE, warning=FALSE, fig.height=12}
+```{r histChord, echo=FALSE, message=FALSE, warning=FALSE, fig.height=8}
 # Chord Diagram
 
 library(chorddiag)
@@ -61,9 +56,9 @@ chord<-chorddiag(data = histFireGVchordMatrix2,
                  groupColors = groupColors,
                  groupnamePadding = 10,
                  groupPadding = 3,
-                 groupnameFontsize = 10 ,
+                 groupnameFontsize = 11 ,
                  showTicks = FALSE,
-                 margin=30,
+                 margin=80,
                  tooltipGroupConnector = "    &#x25B6;    ",
                  chordedgeColor = "#B3B6B7"
 )
