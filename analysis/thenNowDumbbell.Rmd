@@ -11,12 +11,6 @@ editor_options:
 
 This chart depicts acres of fire historically vs. average recent (last 34 years).  
 
-Pretty complete.  Needs:
-
-* [long term-not now] recalculation of average to last 10 years (instead of last 34)
-* check aestetics, e.g., font type and size, colors
-* annotation either inside or outside of chart to explain 
-
 
 
 ```{r dumbbellPrep, message=FALSE, warning=FALSE, include=FALSE}
@@ -126,7 +120,7 @@ vlineHIST <- function(x = avgHist, color = "grey") {
 ```
 
 
-```{r dumbbell, echo=FALSE, message=FALSE, warning=FALSE}
+```{r dumbbell, echo=FALSE, message=FALSE, warning=FALSE, fig.height=9}
 
 
 fig <- plot_ly(historicalCurrentFire, color = I("gray80"))

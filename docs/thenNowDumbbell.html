@@ -17,7 +17,7 @@
 
 <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -430,7 +430,7 @@ div.tocify {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -439,7 +439,7 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -448,10 +448,10 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-01-28
+<strong>Last updated:</strong> 2021-02-01
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>HistFireWF/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -467,12 +467,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
@@ -539,16 +539,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtreeb3233a724c59ac15302f1fd08440f0b741deb6f4targetblankb3233a7a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/rswaty/HistFireWF/tree/b3233a724c59ac15302f1fd08440f0b741deb6f4" target="_blank">b3233a7</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtree10203264ccfb0e7ff60bf5208af811e128462c1atargetblank1020326a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/rswaty/HistFireWF/tree/10203264ccfb0e7ff60bf5208af811e128462c1a" target="_blank">1020326</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtreeb3233a724c59ac15302f1fd08440f0b741deb6f4targetblankb3233a7a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtree10203264ccfb0e7ff60bf5208af811e128462c1atargetblank1020326a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/rswaty/HistFireWF/tree/b3233a724c59ac15302f1fd08440f0b741deb6f4" target="_blank">b3233a7</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/rswaty/HistFireWF/tree/10203264ccfb0e7ff60bf5208af811e128462c1a" target="_blank">1020326</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -558,10 +558,12 @@ Ignored files:
     Ignored:    .RData
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
+    Ignored:    analysis/groupVeg.png
     Ignored:    data/.DS_Store
 
 Unstaged changes:
-    Modified:   analysis/_site.yml
+    Modified:   analysis/histHorizonal.Rmd
+    Modified:   analysis/thenNowDumbbell.Rmd
 
 </code></pre>
 <p>
@@ -600,6 +602,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/rswaty/HistFireWF/18bb783a8962502f896f5e523eb54c5bac46682e/docs/thenNowDumbbell.html" target="_blank">18bb783</a>
+</td>
+<td>
+rswaty
+</td>
+<td>
+2021-01-28
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -661,14 +680,8 @@ Publish the initial files for myproject
 <div id="then-vs.-now" class="section level2">
 <h2>Then vs. now</h2>
 <p>This chart depicts acres of fire historically vs. average recent (last 34 years).</p>
-<p>Pretty complete. Needs:</p>
-<ul>
-<li>[long term-not now] recalculation of average to last 10 years (instead of last 34)</li>
-<li>check aestetics, e.g., font type and size, colors</li>
-<li>annotation either inside or outside of chart to explain</li>
-</ul>
-<div id="htmlwidget-5605086d2bb4c4328ad8" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5605086d2bb4c4328ad8">{"x":{"visdat":{"ec4326a3e05":["function () ","plotlyVisDat"]},"cur_data":"ec4326a3e05","attrs":{"ec4326a3e05":{"color":["gray80"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"xend":{},"yend":{},"type":"scatter","mode":"lines","showlegend":false,"inherit":true},"ec4326a3e05.1":{"color":["#edae52"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"markers","name":"Current","showlegend":false,"inherit":true},"ec4326a3e05.2":{"color":["#9fb059"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"markers","name":"Historical","showlegend":false,"inherit":true}},"layout":{"margin":{"b":40,"l":65,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Acres (in millions)"},"yaxis":{"domain":[0,1],"automargin":true,"title":"","dtick":1,"type":"category","categoryorder":"array","categoryarray":["Wyoming","Wisconsin","West Virginia","Washington","Virginia","Utah","Texas","Tennessee","South Dakota","South Carolina","Pennsylvania","Oregon","Oklahoma","Ohio","North Dakota","North Carolina","New York","New Mexico","New Jersey","Nevada","Nebraska","Montana","Missouri","Mississippi","Minnesota","Michigan","Massachusetts","Maryland","Maine","Louisiana","Kentucky","Kansas","Iowa","Indiana","Illinois","Idaho","Georgia","Florida","Delaware","Colorado","California","Arkansas","Arizona","Alabama"]},"shapes":[{"type":"line","y0":0,"y1":1,"yref":"paper","x0":96068.2272727273,"x1":96068.2272727273,"line":{"color":"grey"}},{"type":"line","y0":0,"y1":1,"yref":"paper","x0":3906326.19081773,"x1":3906326.19081773,"line":{"color":"grey"}}],"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[17288,4579817.061,null,204007,1361935.225,null,30094,5070515.542,null,481328,3926334.03,null,56961,2099961.247,null,37,118405.446,null,269307,8780260.177,null,58939,6712007.945,null,496665,976323.2664,null,457,6174939.014,null,781,1720504.388,null,214,5406922.818,null,381932,10357246.99,null,32851,3278876.693,null,27961,3700435.843,null,104,84018.06248,null,1617,868088.3451,null,23,245353.5883,null,4206,1272086.685,null,39573,4837030.606,null,27886,2884057.129,null,11589,7231215.113,null,243296,4574428.69,null,22019,7512722.583,null,342788,504671.3623,null,5153,562946.2416,null,184699,3173741.308,null,1043,518849.1431,null,21151,4269815.044,null,7583,4804668.992,null,130,1794310.198,null,145075,10924463.31,null,324806,1787484.722,null,627,2571093.722,null,22195,3182404.185,null,33206,5205738.181,null,9433,3387586.102,null,246899,25678735.17,null,137038,661516.8535,null,8008,2626948.231,null,170885,759371.1772,null,29435,1281722.269,null,854,2790353.602,null,126859,1618446.095],"y":["Alabama","Alabama",null,"Arizona","Arizona",null,"Arkansas","Arkansas",null,"California","California",null,"Colorado","Colorado",null,"Delaware","Delaware",null,"Florida","Florida",null,"Georgia","Georgia",null,"Idaho","Idaho",null,"Illinois","Illinois",null,"Indiana","Indiana",null,"Iowa","Iowa",null,"Kansas","Kansas",null,"Kentucky","Kentucky",null,"Louisiana","Louisiana",null,"Maine","Maine",null,"Maryland","Maryland",null,"Massachusetts","Massachusetts",null,"Michigan","Michigan",null,"Minnesota","Minnesota",null,"Mississippi","Mississippi",null,"Missouri","Missouri",null,"Montana","Montana",null,"Nebraska","Nebraska",null,"Nevada","Nevada",null,"New Jersey","New Jersey",null,"New Mexico","New Mexico",null,"New York","New York",null,"North Carolina","North Carolina",null,"North Dakota","North Dakota",null,"Ohio","Ohio",null,"Oklahoma","Oklahoma",null,"Oregon","Oregon",null,"Pennsylvania","Pennsylvania",null,"South Carolina","South Carolina",null,"South Dakota","South Dakota",null,"Tennessee","Tennessee",null,"Texas","Texas",null,"Utah","Utah",null,"Virginia","Virginia",null,"Washington","Washington",null,"West Virginia","West Virginia",null,"Wisconsin","Wisconsin",null,"Wyoming","Wyoming"],"type":"scatter","mode":"lines","showlegend":false,"marker":{"color":"rgba(204,204,204,1)","line":{"color":"rgba(204,204,204,1)"}},"textfont":{"color":"rgba(204,204,204,1)"},"error_y":{"color":"rgba(204,204,204,1)"},"error_x":{"color":"rgba(204,204,204,1)"},"line":{"color":"rgba(204,204,204,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[17288,204007,30094,481328,56961,37,269307,58939,496665,457,781,214,381932,32851,27961,104,1617,23,4206,39573,27886,11589,243296,22019,342788,5153,184699,1043,21151,7583,130,145075,324806,627,22195,33206,9433,246899,137038,8008,170885,29435,854,126859],"y":["Alabama","Arizona","Arkansas","California","Colorado","Delaware","Florida","Georgia","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","South Carolina","South Dakota","Tennessee","Texas","Utah","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"type":"scatter","mode":"markers","name":"Current","showlegend":false,"marker":{"color":"rgba(237,174,82,1)","line":{"color":"rgba(237,174,82,1)"}},"textfont":{"color":"rgba(237,174,82,1)"},"error_y":{"color":"rgba(237,174,82,1)"},"error_x":{"color":"rgba(237,174,82,1)"},"line":{"color":"rgba(237,174,82,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[4579817.061,1361935.225,5070515.542,3926334.03,2099961.247,118405.446,8780260.177,6712007.945,976323.2664,6174939.014,1720504.388,5406922.818,10357246.99,3278876.693,3700435.843,84018.06248,868088.3451,245353.5883,1272086.685,4837030.606,2884057.129,7231215.113,4574428.69,7512722.583,504671.3623,562946.2416,3173741.308,518849.1431,4269815.044,4804668.992,1794310.198,10924463.31,1787484.722,2571093.722,3182404.185,5205738.181,3387586.102,25678735.17,661516.8535,2626948.231,759371.1772,1281722.269,2790353.602,1618446.095],"y":["Alabama","Arizona","Arkansas","California","Colorado","Delaware","Florida","Georgia","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","South Carolina","South Dakota","Tennessee","Texas","Utah","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"type":"scatter","mode":"markers","name":"Historical","showlegend":false,"marker":{"color":"rgba(159,176,89,1)","line":{"color":"rgba(159,176,89,1)"}},"textfont":{"color":"rgba(159,176,89,1)"},"error_y":{"color":"rgba(159,176,89,1)"},"error_x":{"color":"rgba(159,176,89,1)"},"line":{"color":"rgba(159,176,89,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5605086d2bb4c4328ad8" style="width:672px;height:864px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5605086d2bb4c4328ad8">{"x":{"visdat":{"142043ba1875":["function () ","plotlyVisDat"]},"cur_data":"142043ba1875","attrs":{"142043ba1875":{"color":["gray80"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"xend":{},"yend":{},"type":"scatter","mode":"lines","showlegend":false,"inherit":true},"142043ba1875.1":{"color":["#edae52"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"markers","name":"Current","showlegend":false,"inherit":true},"142043ba1875.2":{"color":["#9fb059"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"markers","name":"Historical","showlegend":false,"inherit":true}},"layout":{"margin":{"b":40,"l":65,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Acres (in millions)"},"yaxis":{"domain":[0,1],"automargin":true,"title":"","dtick":1,"type":"category","categoryorder":"array","categoryarray":["Wyoming","Wisconsin","West Virginia","Washington","Virginia","Utah","Texas","Tennessee","South Dakota","South Carolina","Pennsylvania","Oregon","Oklahoma","Ohio","North Dakota","North Carolina","New York","New Mexico","New Jersey","Nevada","Nebraska","Montana","Missouri","Mississippi","Minnesota","Michigan","Massachusetts","Maryland","Maine","Louisiana","Kentucky","Kansas","Iowa","Indiana","Illinois","Idaho","Georgia","Florida","Delaware","Colorado","California","Arkansas","Arizona","Alabama"]},"shapes":[{"type":"line","y0":0,"y1":1,"yref":"paper","x0":96068.2272727273,"x1":96068.2272727273,"line":{"color":"grey"}},{"type":"line","y0":0,"y1":1,"yref":"paper","x0":3906326.19081773,"x1":3906326.19081773,"line":{"color":"grey"}}],"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[17288,4579817.061,null,204007,1361935.225,null,30094,5070515.542,null,481328,3926334.03,null,56961,2099961.247,null,37,118405.446,null,269307,8780260.177,null,58939,6712007.945,null,496665,976323.2664,null,457,6174939.014,null,781,1720504.388,null,214,5406922.818,null,381932,10357246.99,null,32851,3278876.693,null,27961,3700435.843,null,104,84018.06248,null,1617,868088.3451,null,23,245353.5883,null,4206,1272086.685,null,39573,4837030.606,null,27886,2884057.129,null,11589,7231215.113,null,243296,4574428.69,null,22019,7512722.583,null,342788,504671.3623,null,5153,562946.2416,null,184699,3173741.308,null,1043,518849.1431,null,21151,4269815.044,null,7583,4804668.992,null,130,1794310.198,null,145075,10924463.31,null,324806,1787484.722,null,627,2571093.722,null,22195,3182404.185,null,33206,5205738.181,null,9433,3387586.102,null,246899,25678735.17,null,137038,661516.8535,null,8008,2626948.231,null,170885,759371.1772,null,29435,1281722.269,null,854,2790353.602,null,126859,1618446.095],"y":["Alabama","Alabama",null,"Arizona","Arizona",null,"Arkansas","Arkansas",null,"California","California",null,"Colorado","Colorado",null,"Delaware","Delaware",null,"Florida","Florida",null,"Georgia","Georgia",null,"Idaho","Idaho",null,"Illinois","Illinois",null,"Indiana","Indiana",null,"Iowa","Iowa",null,"Kansas","Kansas",null,"Kentucky","Kentucky",null,"Louisiana","Louisiana",null,"Maine","Maine",null,"Maryland","Maryland",null,"Massachusetts","Massachusetts",null,"Michigan","Michigan",null,"Minnesota","Minnesota",null,"Mississippi","Mississippi",null,"Missouri","Missouri",null,"Montana","Montana",null,"Nebraska","Nebraska",null,"Nevada","Nevada",null,"New Jersey","New Jersey",null,"New Mexico","New Mexico",null,"New York","New York",null,"North Carolina","North Carolina",null,"North Dakota","North Dakota",null,"Ohio","Ohio",null,"Oklahoma","Oklahoma",null,"Oregon","Oregon",null,"Pennsylvania","Pennsylvania",null,"South Carolina","South Carolina",null,"South Dakota","South Dakota",null,"Tennessee","Tennessee",null,"Texas","Texas",null,"Utah","Utah",null,"Virginia","Virginia",null,"Washington","Washington",null,"West Virginia","West Virginia",null,"Wisconsin","Wisconsin",null,"Wyoming","Wyoming"],"type":"scatter","mode":"lines","showlegend":false,"marker":{"color":"rgba(204,204,204,1)","line":{"color":"rgba(204,204,204,1)"}},"textfont":{"color":"rgba(204,204,204,1)"},"error_y":{"color":"rgba(204,204,204,1)"},"error_x":{"color":"rgba(204,204,204,1)"},"line":{"color":"rgba(204,204,204,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[17288,204007,30094,481328,56961,37,269307,58939,496665,457,781,214,381932,32851,27961,104,1617,23,4206,39573,27886,11589,243296,22019,342788,5153,184699,1043,21151,7583,130,145075,324806,627,22195,33206,9433,246899,137038,8008,170885,29435,854,126859],"y":["Alabama","Arizona","Arkansas","California","Colorado","Delaware","Florida","Georgia","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","South Carolina","South Dakota","Tennessee","Texas","Utah","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"type":"scatter","mode":"markers","name":"Current","showlegend":false,"marker":{"color":"rgba(237,174,82,1)","line":{"color":"rgba(237,174,82,1)"}},"textfont":{"color":"rgba(237,174,82,1)"},"error_y":{"color":"rgba(237,174,82,1)"},"error_x":{"color":"rgba(237,174,82,1)"},"line":{"color":"rgba(237,174,82,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[4579817.061,1361935.225,5070515.542,3926334.03,2099961.247,118405.446,8780260.177,6712007.945,976323.2664,6174939.014,1720504.388,5406922.818,10357246.99,3278876.693,3700435.843,84018.06248,868088.3451,245353.5883,1272086.685,4837030.606,2884057.129,7231215.113,4574428.69,7512722.583,504671.3623,562946.2416,3173741.308,518849.1431,4269815.044,4804668.992,1794310.198,10924463.31,1787484.722,2571093.722,3182404.185,5205738.181,3387586.102,25678735.17,661516.8535,2626948.231,759371.1772,1281722.269,2790353.602,1618446.095],"y":["Alabama","Arizona","Arkansas","California","Colorado","Delaware","Florida","Georgia","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","South Carolina","South Dakota","Tennessee","Texas","Utah","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"type":"scatter","mode":"markers","name":"Historical","showlegend":false,"marker":{"color":"rgba(159,176,89,1)","line":{"color":"rgba(159,176,89,1)"}},"textfont":{"color":"rgba(159,176,89,1)"},"error_y":{"color":"rgba(159,176,89,1)"},"error_x":{"color":"rgba(159,176,89,1)"},"line":{"color":"rgba(159,176,89,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">

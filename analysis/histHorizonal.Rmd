@@ -33,9 +33,3 @@ ggplot( fire, aes(x=fct_reorder(state, historical_.annual_percent_burned), y=his
 fireLP
 
 ```
-
-```{r}
-fireLP + 
-  scale_color_gradient(low = 'greenyellow', high = 'forestgreen')
-```
-
