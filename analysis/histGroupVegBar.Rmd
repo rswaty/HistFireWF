@@ -1,5 +1,5 @@
 ---
-title: "histGroupVegBar"
+title: "Historical Vegetation Groups and Fire"
 author: "Randy Swaty"
 date: "2021-01-28"
 output: workflowr::wflow_html
@@ -7,9 +7,20 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Historical Group Veg grouped bar
+## Historical Vegetation Groups
 
-Depicts fire type by group veg.
+```{r, echo=FALSE, out.width= "100%"} 
+knitr::include_graphics("groupVeg.png")
+```
+
+
+<br>
+
+## Fire type by Vegetation Group
+
+This draft chart depicts amount of different types of fire the vegetation groups experienced per year historically.
+
+<br>
 
 
 ```{r histGVfireGroupedBar, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}

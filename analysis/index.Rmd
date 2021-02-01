@@ -11,10 +11,22 @@ editor_options:
 ## This "site"...
 Is a rough collection of riffs that may or may not become parts of songs in a potential album.  It is a "place" to work and share, **but most definitely itself a communications tool**.  
 
-Some terms are hard to define clearly.  For example, "Historical".  We do not model a specific year, but instead try to capture the disturbance dynamics just prior to major European colonization.
+## We're excited
+We have data from hundreds of ecosystem models, and dozens of datasets mapping vegetation and fire characteristics to mine and explore.  Each of the datasets labels over 9 billion pixels for the lower 48 states alone.  
 
-These are not final products, and have not been fully annotated.  
+How can we connect emergent findings from these datasets to people who need to know?
 
+## Warnings
+
+* Some terms are hard to define clearly.  For example, "Historical".  We do not model a specific year, but instead try to capture the disturbance dynamics just prior to major European colonization.  This is part of the beauty of the models--not a single snapshot, but more of a window.
+
+* These are not final products, and have not been fully annotated.   
+
+* If you are a perfectionist close your eyes.  Font sizes and families are inconsistent.
+
+* While we are HAPPY *happy* **happy** to address data issues and questions ("what the why is Oklahoma red?"), we'd like to focus on potential stories, audiences and ways to connect first, *if possible*.  
+
+* Regarding those questions, I feel that annotations and stories are the way to address "surprises", and yes we need to make sure there are ZERO errors.  There may be knowledge gaps, or we may disagree, but we do not want to have blunders or mistakes.
 
 
 ## Blah blah blah

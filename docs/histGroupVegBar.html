@@ -13,7 +13,7 @@
 
 <meta name="date" content="2021-01-28" />
 
-<title>histGroupVegBar</title>
+<title>Historical Vegetation Groups and Fire</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -414,7 +414,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">histGroupVegBar</h1>
+<h1 class="title toc-ignore">Historical Vegetation Groups and Fire</h1>
 <h4 class="author">Randy Swaty</h4>
 <h4 class="date">2021-01-28</h4>
 
@@ -532,16 +532,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtree1b7cf3912baebaae3f033102b7aeed04e5853a2atargetblank1b7cf39a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/rswaty/HistFireWF/tree/1b7cf3912baebaae3f033102b7aeed04e5853a2a" target="_blank">1b7cf39</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtree3c7ffe2a40fefd2af5e171900bef8744a8e411b6targetblank3c7ffe2a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/rswaty/HistFireWF/tree/3c7ffe2a40fefd2af5e171900bef8744a8e411b6" target="_blank">3c7ffe2</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtree1b7cf3912baebaae3f033102b7aeed04e5853a2atargetblank1b7cf39a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomrswatyHistFireWFtree3c7ffe2a40fefd2af5e171900bef8744a8e411b6targetblank3c7ffe2a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/rswaty/HistFireWF/tree/1b7cf3912baebaae3f033102b7aeed04e5853a2a" target="_blank">1b7cf39</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/rswaty/HistFireWF/tree/3c7ffe2a40fefd2af5e171900bef8744a8e411b6" target="_blank">3c7ffe2</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -551,22 +551,16 @@ Ignored files:
     Ignored:    .RData
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
+    Ignored:    analysis/groupVeg.png
     Ignored:    data/.DS_Store
 
 Untracked files:
-    Untracked:  analysis/goo.gif
-    Untracked:  code/animatedCurrent.R
-    Untracked:  figure/
-    Untracked:  goo.gif
+    Untracked:  figure/groupVeg.png
+    Untracked:  groupVeg.png
 
 Unstaged changes:
-    Modified:   analysis/animatedCurrent.Rmd
     Modified:   analysis/histGroupVegBar.Rmd
-    Modified:   analysis/histGroupVegChord.Rmd
-    Modified:   analysis/histHexBin.Rmd
-    Modified:   analysis/histHorizonal.Rmd
-    Modified:   analysis/historicalChoropleth.Rmd
-    Modified:   data/modernFiresAcres.csv
+    Modified:   analysis/index.Rmd
 
 </code></pre>
 <p>
@@ -605,6 +599,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/rswaty/HistFireWF/blob/3c7ffe2a40fefd2af5e171900bef8744a8e411b6/analysis/histGroupVegBar.Rmd" target="_blank">3c7ffe2</a>
+</td>
+<td>
+rswaty
+</td>
+<td>
+2021-02-01
+</td>
+<td>
+added animated files, fixed others
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/rswaty/HistFireWF/3c7ffe2a40fefd2af5e171900bef8744a8e411b6/docs/histGroupVegBar.html" target="_blank">3c7ffe2</a>
+</td>
+<td>
+rswaty
+</td>
+<td>
+2021-02-01
+</td>
+<td>
+added animated files, fixed others
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -680,9 +708,15 @@ Publish the initial files for myproject
 </div>
 </div>
 </div>
-<div id="historical-group-veg-grouped-bar" class="section level2">
-<h2>Historical Group Veg grouped bar</h2>
-<p>Depicts fire type by group veg.</p>
+<div id="historical-vegetation-groups" class="section level2">
+<h2>Historical Vegetation Groups</h2>
+<p><img src="groupVeg.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><br></p>
+</div>
+<div id="fire-type-by-vegetation-group" class="section level2">
+<h2>Fire type by Vegetation Group</h2>
+<p>This draft chart depicts amount of different types of fire the vegetation groups experienced per year historically.</p>
+<p><br></p>
 <p><img src="figure/histGroupVegBar.Rmd/histGVfireGroupedBar-1.png" width="960" style="display: block; margin: auto;" /></p>
 <br>
 <p>
@@ -716,8 +750,8 @@ other attached packages:
 loaded via a namespace (and not attached):
  [1] Rcpp_1.0.6        lubridate_1.7.9.2 ps_1.5.0          assertthat_0.2.1 
  [5] rprojroot_2.0.2   digest_0.6.27     R6_2.5.0          cellranger_1.1.0 
- [9] backports_1.2.1   reprex_1.0.0      evaluate_0.14     highr_0.8        
-[13] httr_1.4.2        pillar_1.4.7      rlang_0.4.10      readxl_1.3.1     
+ [9] backports_1.2.1   reprex_1.0.0      evaluate_0.14     httr_1.4.2       
+[13] highr_0.8         pillar_1.4.7      rlang_0.4.10      readxl_1.3.1     
 [17] rstudioapi_0.13   whisker_0.4       extrafontdb_1.0   rmarkdown_2.6    
 [21] labeling_0.4.2    munsell_0.5.0     broom_0.7.3       compiler_3.6.2   
 [25] httpuv_1.5.5      modelr_0.1.8      xfun_0.20         pkgconfig_2.0.3  
